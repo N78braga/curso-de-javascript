@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;;AAAA;AACA;AACA;AACAA,OAAO,CAACC,GAAG,CAAC,yBAAyB,CAAC,C","sources":["webpack://aula93-webpack-boilerplate/./src/index.js"],"sourcesContent":["// 1\r\n// 2\r\n// 3\r\nconsole.log('EIIIIIIIIIIIIIIIIIIIIII');"],"names":["console","log"],"sourceRoot":""}
