@@ -27,11 +27,13 @@ app.get('/', (req, res) => {
   //   `);
  res.send(`
     <form action="/" method="POST">
-    Nome do Cliente: <input type="text" name="qualquercoisa">
+    Nome do Cliente: <input type="text" name="qualquercoisa"><br> 
+    outro campo: <input type="text" name="aquioutrocampo">
     <button>Enviar</button>
     </form>
     `);
-});
+});// N input na propriedade nome após o sinal de igual o paramêntro passa a ser a chave do body e o seu retorno vai ser -> qualquercoisa: 'Ernando'.
+// Onde qualquer coisa é a chave  e o valor vai ser o que foi inputado no navegador.
 
 // recebendo um paramêntro vindo do navegador
 app.get('/testes/:idUsuarios?/:paramentro?', (req, res) => {
