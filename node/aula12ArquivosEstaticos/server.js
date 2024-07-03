@@ -19,7 +19,8 @@ const path = require("path");
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+// app.use(express.static('./public')); Este é uma forma de definir o caminho das pastas passando o caminho relativo
+app.use(express.static(path.resolve(__dirname, 'public'))); // Este é uma forma de definir o caminho das pastas passando o caminho absoluto
 
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
