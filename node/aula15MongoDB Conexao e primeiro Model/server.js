@@ -11,9 +11,22 @@
  * exemplo http://facebook.com/profiles/?id=123?campanha=googleads&nome_cqampanha=seila
  */
 
+
+
+require('dotenv').config();
+
 const express = require("express");
 const send = require("send");
 const app = express();
+const moogoose = require("mongoose");
+
+
+moogoose.connect(process.env.CONNECTIONSTRING)
+  .then(() => {
+    app.emit('pronto');
+  })
+  .catch(e => console.log(e));
+
 const routes = require("./routes");
 const path = require("path");
 const meuMiddleware = require("./src/middlewares/middleware");// exportando com o module.exports
@@ -32,8 +45,10 @@ app.set("view engine", "ejs");
 app.use(meuMiddleware);// exportando com o module.exports
 
 app.use(routes);
-
-app.listen(3000, () => {
+app.on('pronto', () => {
+  app.listen(3000, () => {
   console.log("Acessar http://localhost:3000");
   console.log("Server running on port 3000");
 });
+});
+

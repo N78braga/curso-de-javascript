@@ -14,7 +14,7 @@
 const express = require("express");
 const send = require("send");
 const app = express();
-
+const porta = 3000;
 app.use(express.urlencoded({ extended: true })); // para poder usar o req.body para pegar os dados do navegador obs sempre 
 // use o [app.use(express.urlencoded({ extended: true });] antes para tratar os dados do navegador
 
@@ -45,7 +45,7 @@ app.get('/testes/:idUsuarios?/:paramentro?', (req, res) => {
   // res.send(req.params);//desta forma ele vai mim retorna um json com os paramêntros vindo do navegador
   res.send(req.query.facebookprofile);// Realizando a sólicitação do perfil do facebook atrave do quyery string
 
-});
+}); 
 
 // para realizar um post  do quyery string tem que ser sólicitado no bady
 // app.post('/', (req, res) => {
@@ -60,7 +60,7 @@ app.post('/', (req, res) => {
   // atrve do req.body que vem do navegador.
 });
 
-app.listen(3000, () => {
+app.listen(porta, () => {
   console.log("Acessar http://localhost:3000");
   console.log("Server running on port 3000");
 });
