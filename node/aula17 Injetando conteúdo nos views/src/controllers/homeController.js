@@ -9,10 +9,14 @@
 exports.paginaInicial = (req, res) => {
   //req.session.usuario = {nome: 'Marcos', logado: true}; // Mantei por 7 dia em memoria o login
   // Esta forma chama o HTML que esta dentro da pasta views
-  res.render("index");
+  
+  res.render("index", {
+    titulo: 'Este será o titulo da página',
+    numeros: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  });
   return; // posso usar o return para parar o fluxo da aplicação e mostrar uma mensagem na tela
 
-
+      
 };
 
 exports.trataPost = (req, res) => {

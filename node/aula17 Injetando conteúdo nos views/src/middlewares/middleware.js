@@ -1,4 +1,5 @@
 module.exports = (req, res, next) => {
+  res.locals.variavelLocal = 'Este é o valor da variável locaol.';// ppode er qualquer coisa uma função um objetor
   next();
   //     if(req.body.cliente){
   //         req.body.cliente = req.body.cliente.replace('Nando', 'Não use nando');

@@ -1,0 +1,33 @@
+<% Controle de fluxo (if, for ...) %>
+<%= Imprime escapar caracteres %>
+<%- Imprime sem escapar caracteres %>
+<%# Comentário %>
+<%- include('CAMINHO/ARQUIVO'); %>
+
+Exemplo de como é realizado o controle do fluxo em ejs
+
+<% if(alguma coisa ) {%>
+   <%= Exibindo alma coisa %>
+<% } else {%>
+   <%= Exibe outra coisa %>
+<% } %>
+
+ <!--- E estas tags nos permitem que possamos chamar o valor de uma variável que esta no 
+      arquivo homeController.js com isso para utilizar ou pegar o valo4r de uma aplicação 
+      basta usar as tags do ejs que é <%#=%> ou <%#-%> -->
+
+      <!--<%#= titulo %> Este não permitirá que escape caracteres tornandou mais seguro-->
+      <!--<%#-titulo %> Este permitira que escape caracteres e não é tão seguro-->
+      <!--Para realizar uma verificação basta usar só as tags com o sinal de 
+      por cntagem conforme o exemplo baixo-->
+      <!--Guando se fala em seguraça não é segura em envair mas sim e código. 
+      
+      <%# if(typeof(titulo) == 'undefined') {%>
+        <%#= titulo %>
+        <%# }else { %>
+          O titulo não foi enviado.
+          <%# } %>-->
+      Usando as tags com for conforme o exemplo abaixo
+      <% numeros.forEach(num => { %>
+           <%= num %><br>
+           <% }); %></br>
